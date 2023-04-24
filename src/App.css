@@ -1,10 +1,16 @@
-.App {
-  text-align: center;
+.borderWidth {
+  width: 50%;
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.flex-container div {
+  width: 300px;
+  margin: 10px;
+  text-align: center;
 }
 
 @media (prefers-reduced-motion: no-preference) {
