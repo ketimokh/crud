@@ -20,7 +20,8 @@ const createPost = (title,body) => {
         body
     })
         .then((response) => {
-            setAPIData(prev => [response.data, ...prev])
+            console.log(Math.floor(Math.random() * 100))
+            setAPIData(prev => [{...response.data, id: Math.floor(Math.random() * 10000)}, ...prev])
         })
 }
 
@@ -44,7 +45,7 @@ const createPost = (title,body) => {
             body: post.body
         })
         setAPIData(prev => prev.map((el) => {
-            if (el.id === response.data.id) return response.data
+            if (el.id === post.id) return {...response.data, id: post.id}
             return el
         }))
         setPost(null)

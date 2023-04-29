@@ -25,7 +25,7 @@ const CreateForm = (props) => {
                 </div>
                 <button
                     type='submit'
-                    className='bg-warning add-button'
+                    className='bg-warning add-button btn'
                     onClick={() => props.createHook.createPost(props.createHook.title,props.createHook.body)}
                 >
                     add content
