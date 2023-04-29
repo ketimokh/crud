@@ -26,7 +26,7 @@ const createPost = (title,body) => {
 
 
     const updatePost = async () => {
-        if (post == null) return
+        if (post === null) return
         // axios.patch('https://jsonplaceholder.typicode.com/posts/' + post.id, {
         //     title: post.title,
         //     body: post.body

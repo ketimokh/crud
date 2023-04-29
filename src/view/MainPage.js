@@ -1,69 +1,42 @@
-import usePage from "../component/hook/usePage";
+import usePage from '../component/hook/usePage';
 import UpdateForm from "./UpdateForm";
+import CreateForm from "./CreateForm";
 
 const MainPage = () => {
     const hook = usePage()
-    console.log(hook.post)
     return (
         <div className= 'page-content'>
-            <div className=''>
-                <div className='todo-style'>
-                    <div className='todo-form'>
-                        <div>
-                            <input
-                                onChange={event => hook.setTitle(event.target.value)}
-                                type='text'
-                                className='title-input'
-                                name='title'
-                                value={hook.title}
-                            >
-                            </input>
-                        </div>
-                        <div className='mt-2'>
-                            <textarea
-                                onChange={event => hook.setBody(event.target.value)}
-                                name='body'
-                                className='body-input'
-                                value={hook.body}
-                            >
-                            </textarea>
-                        </div>
-                    </div>
-                    <button
-                        type='submit'
-                        className='bg-warning add-button'
-                        onClick={() => hook.createPost(hook.title,hook.body)}
-                    >
-                        add content
-                        </button>
-                    </div>
-            </div>
-            <div className='flex-container '>
+            {<CreateForm createHook={hook}/>}
+            <div className='posts-wrapper '>
                 {hook.aPIData.map((el) => {
                     return(
-                        <div className=' overflow-hidden ' key={el.id} >
-                            <div><h3 className='fs-5'>{el.title}</h3></div>
-                            <div><p className=''>{ el.body}</p></div>
-                            <div className='d-flex'>
-                                <div>
-                                    <button
-                                        type='submit'
-                                        className='btn bg-info mb-4'
-                                        onClick={() => {
-                                            hook.setPost(el)
-                                        }}
-                                    >
-                                        edit post
-                                    </button>
-                                </div>
-                                <div>
-                                    <button
-                                        type='submit'
-                                        className='btn bg-info mb-4'
-                                        onClick={() => hook.deletePost(el.id)}
-                                    >
-                                        delete post
-                                    </button>
+                        <div className='mt-5 d-flex justify-content-center' key={el.id} >
+                            <div className='card'>
+                                <div className='card-body post-wrapper'>
+                                    <h5 className='card-title'>{el.title}</h5>
+                                    <p className='card-text'>{ el.body}</p>
+                                    <div className='d-flex'>
+                                        <div>
+                                            <button
+                                                type='submit'
+                                                className='btn bg-info mb-4'
+                                                onClick={() => {
+                                                    hook.setPost(el)
+                                                }}
+                                            >
+                                                edit post
+                                            </button>
+                                        </div>
+                                        <div className='delete-button'>
+                                            <button
+                                                type='submit'
+                                                className='btn bg-info mb-4'
+                                                onClick={() => hook.deletePost(el.id)}
+                                            >
+                                                delete post
+                                            </button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

@@ -1,5 +1,5 @@
 .page-content {
-  max-width: 2000px;
+  background-color: cadetblue;
 }
 
 .todo-style {
@@ -11,6 +11,23 @@
   /*align-items: center;*/
   /*margin-left:300px;*/
 
+}
+.posts-wrapper{
+  width: 700px;
+  padding-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 300px;
+  padding-bottom: 20px;
+}
+
+.post-wrapper {
+  box-shadow: 1px 1px 6px 1px  #d9d5d5;
+  background-color: darkgray;
+}
+
+.modal-post {
+  background-color: darkgray;
 }
 .todo-form {
   width: 50%;
@@ -33,50 +50,28 @@
 .add-button {
   margin-left: 100px;
 }
+.delete-button {
+  margin-left: 10px;
+}
 
 .borderWidth {
   width: 50%;
 
 }
 
-.flex-container {
-  display: flex;
-  flex-wrap: wrap;
-  background-color: cadetblue;
-}
-.flex-container div {
-  background-color: darkgray;
-  width: 300px;
-  margin: 10px;
-  text-align: center;
-}
+/*.flex-container {*/
+/*  width: 100px;*/
+/*  margin: 10px;*/
+/*  text-align: center;*/
+/*  line-height: 75px;*/
+/*  font-size: 30px;*/
+/*  background-color: cadetblue;*/
+/*}*/
+/*.flex-container div {*/
+/*  background-color: darkgray;*/
+/*  width: 300px;*/
+/*  margin: 10px;*/
+/*  text-align: center;*/
+/*}*/
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}

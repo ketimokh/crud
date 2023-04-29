@@ -13,15 +13,15 @@ const UpdateForm = (props) => {
     // }, [])
     return ReactDom.createPortal(
        <>
-           <div className='modal fade show' style={{display: 'block'}}>
-               <div className='modal-dialog'>
+           <div className='modal fade show ' style={{display: 'block'}}>
+               <div className='modal-dialog '>
                    <div className='modal-content'>
                        <div className='modal-header'>
                            <h5 className='modal-title'>{props.title}</h5>
                            <input
                                onChange={event => props.hook.setPost(pre => ({...pre, title: event.target.value}))}
                                type='text'
-                               className=''
+                               className='title-input'
                                name='title'
                                value={props.hook.post.title}
                            >
@@ -32,7 +32,7 @@ const UpdateForm = (props) => {
                         <textarea
                             onChange={event => props.hook.setPost(pre => ({...pre, body: event.target.value}))}
                             name='body'
-                            className=''
+                            className='body-input'
                             value={props.hook.post.body}
                         >
                             </textarea>
